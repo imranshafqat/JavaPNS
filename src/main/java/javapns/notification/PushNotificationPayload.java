@@ -222,6 +222,17 @@ public class PushNotificationPayload extends Payload {
   }
 
   /**
+   * Add a category.
+   *
+   * @param alertMessage the category
+   * @throws JSONException
+   */
+  public void setContentAvailableFlag() throws JSONException {
+    PushNotificationPayload.logger.debug("Adding content-availablen flag to aps."));
+    put("content-available", 1, apsDictionary, false);
+  }
+
+  /**
    * Get the custom alert object, creating it if it does not yet exist.
    *
    * @return the JSON object defining the custom alert
